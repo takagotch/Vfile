@@ -1,0 +1,1 @@
+bundle gem my_vagrant_plugin

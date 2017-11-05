@@ -1,0 +1,5 @@
+bundle exec rake -T
+
+bundle exec rake build
+
+vagrant plugin install /path/to/pkg/my_vagrant_plugin-0.0.1.gem

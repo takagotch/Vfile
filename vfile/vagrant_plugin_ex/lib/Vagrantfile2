@@ -1,0 +1,26 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+
+Vagrant.require_plugin "my_vagrant_plugin"
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "bentos/centos-6.7"
+  config.my_key.value = 12
+  
+  
+  # config.vm.network "forwarded_port", guest: 80, host: 8080  
+  config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.synced_folder "./shared", "/home/vagrant/shared"
+end
+
+
+
+#Vagrant::Environment-->A,1 vagrant::Machine-->B,2
+Vagrant.configure("2") do |config|
+  config.my_key.value = 1
+  config.vm.define "A" do |a|
+    a.my_key.value = 2
+  end
+  config.vm.define "B"
+end

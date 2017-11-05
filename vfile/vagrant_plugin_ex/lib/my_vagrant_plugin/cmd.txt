@@ -1,0 +1,4 @@
+#"free-memory"
+bundle exec vagrant free-memory
+
+bundle exec vagrant up

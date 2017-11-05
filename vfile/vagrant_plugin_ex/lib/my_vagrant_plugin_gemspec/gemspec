@@ -1,0 +1,20 @@
+#-*- encoding: utg-8 -*-
+lib = file.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'my_vagrant_plugin/version'
+Gem::Specification.new do |gem|
+  gem.name         = "my_vagrant_plugin"
+  gem.version      = MyVagrantPlugin::VERSION
+  gem.authors      = ["talagotch"]
+  gem.email        = ["talagotch@gamil.com"]
+  gem.description  = %q{Example Vagrant gem}
+  gem.summary      = %q{Example Vagrant gem}
+  gem.homepage     = ""
+  
+  gem.add_development_dependency "rake"
+  
+  gem.files         = 'git ls-files'.split($/)
+  gem.executeables  = gem.files.grep(%r{^bin}).map{ |f| File.basename(f) }
+  gem.test_files    = gem.files.grep(%r(test|spec|features)/)
+  gem.require_paths = ["lib"]
+end
