@@ -1,0 +1,41 @@
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANT_API_VERSION) do |config|
+  config.vm.box = "dummy"
+  config.omunibus.chef_version = :latest
+
+  config.vm.define :node1 do |node|
+    configure_node(node) do |aws, override|
+      aws.tags = {'Name' => 'vagrant-test01'}
+    end
+  end
+  
+  config.vm.define :node2 do |node|
+    configure_node(node) do |aws, override|
+      aws.tags = {'Name' => 'vagrant-test02'}
+    end
+  end
+end
+
+def configure_node(node, &block)
+  node.vm.provider :aws do |aws, override|
+    aws.access_key_id = ENV['<your access_key_id>']
+	aws.secret_name_access_key = ENV['<your access_secret_key>']
+    aws.keypair_name = "takagotch's key"
+	
+	aws.instance_type = "t1.micro"
+	aws.region = "ap-northeast-1"
+	aws.ami = "ami-xxxxxx"
+	aws.secrity_groups = ['vagrant']
+	aws.tags = {'Name' => 'vagrant-test02'}
+	
+    override.ssh.username = 'ec2-user'
+	override.ssh.private_key_path = '~/.ssh/aws-takagotchkeys.pem'
+    block.call(aws, override)
+  end
+  #
+  node.vm.provision :chef_solo do |chef|
+    chef.add_recipe "nginx"
+	chef.add_recipe "git"
+  end
+end
