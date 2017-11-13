@@ -1,0 +1,8 @@
+vagrant sandbox on
+vagrant sandbox rollback
+vagrant sandbox commit
+vagrant sandbox off
+
+vagrant sandbox status
+vagrant sandbox status web
+vagrant sandbox status db

@@ -1,0 +1,20 @@
+#multi_machine
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  
+  box_name = "bent/centos-7.2"
+  
+  #1
+  config.vm.define :web do |web|
+    web.vm.box = box_name
+	web.vm.network :private_network, ip: "192.168.33.10"
+	web.hostname = "web"
+  end
+  #2
+  config.vm.define :db do |db|
+    db.vm.box = box_name
+	db.vm.network :private_network, ip: "192.168.99.10"
+	db.vm.hostname = "db"
+  end
+end
