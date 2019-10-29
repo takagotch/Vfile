@@ -2,3 +2,9 @@ vagrant ssh-config --host hostname >> ~/.ssh/config
 https://github.com/takagotch/git_tky/tree/master/tky/.ssh
 
 
+LOCAL
+
+GLOBAL
+ /etc/ssh/ssh_config
+
+
