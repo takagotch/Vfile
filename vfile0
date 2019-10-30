@@ -46,6 +46,12 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "./shared", "/home/vagrant/shared"
   # config.vm.synced_folder ".", "/home/vagrant/sync", disabled: true
+  # 
+  # $ vagrant plugin install vagrant-vbguest
+  # $ vagrant up; vagrant reload
+  # $ vagrant status
+  # https://github.com/dotless-de/vagrant-vbguest
+  
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
