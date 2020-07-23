@@ -21,8 +21,9 @@ http://www.vagrantbox.es/
 ```
 mkdir dev1
 cd dev1
-vagrant box add CentOS7 https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box
-vagrant init CentOS7
+vagrant init bento/centos7
+// vagrant box add CentOS7 https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box
+//vagrant init CentOS7
 vi VagrantFile
 ```
 ```
