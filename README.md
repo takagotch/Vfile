@@ -18,6 +18,23 @@ https://github.com/chef/bento
 ###### vagrabtbox,es
 http://www.vagrantbox.es/
 
+```
+mkdir dev1
+cd dev1
+vi VagrantFile
+```
+```
+
+```
+```
+vagrant box add CentOS7 https://github.com/tommy-muehle/puppet-vagrant-boxes/releases/download/1.1.0/centos-7.0-x86_64.box
+vagrant up
+vagrant ssh
+
+
+
+```
+
 
 ####
 
