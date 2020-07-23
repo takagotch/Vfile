@@ -31,6 +31,15 @@ https://github.com/Varying-Vagrant-Vagrants
 
 
 ```
+mkdir dev
+cd dev
+vagrant -v
+vagrant init bento/centos7
+vi vagrantfile
+# 192.168.33.19
+vagrant up
+
+
 
 ```
 
