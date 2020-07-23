@@ -38,7 +38,8 @@ vagrant init bento/centos7
 vi vagrantfile
 # 192.168.33.19
 vagrant up
-
+vagrant box list
+vagrant ssh
 
 
 ```
